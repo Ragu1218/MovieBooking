@@ -59,7 +59,7 @@ namespace MovieBookingAPI.Controllers
             var token = new JwtSecurityToken(config["Jwt:Issuer"],
               config["Jwt:Audience"],
               claims,
-              expires: DateTime.Now.AddMinutes(15),
+              expires: DateTime.Now.AddMinutes(5),
               signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

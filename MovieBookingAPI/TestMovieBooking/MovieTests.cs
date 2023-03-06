@@ -34,7 +34,7 @@ namespace TestMovieBooking
                     rating = 3.0,
                     Censored = "htfr",
                     Genre="thriller",
-                    Durtion="3hrs",
+                    Duration="3hrs",
                     Id="6400ca751f3418c68ad2c04f"
                 },
                 new Movie()
@@ -44,7 +44,7 @@ namespace TestMovieBooking
                     rating = 9.0,
                     Censored = "A",
                     Genre="Drama",
-                    Durtion="2hrs",
+                    Duration="2hrs",
                     Id="6400ca751f3418c68ad2c0er"
                 }
             };
@@ -52,9 +52,9 @@ namespace TestMovieBooking
 
             MovieController mController = new MovieController(movieServices.Object);
             var actual = mController.getAllMovies();
-            ActionResult<List<Movie>> expected = (ActionResult<List<Movie>>)data;
+            var check = (OkObjectResult)actual.Result;
             //Assert.AreEqual(actual.ToBson(),expected.ToBson());
-            Assert.That(actual.GetType(), Is.EqualTo(expected.GetType()));
+            Assert.That(check.Value, Is.EqualTo(data));
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace TestMovieBooking
                 rating = 9.0,
                 Censored = "A",
                 Genre = "Drama",
-                Durtion = "2hrs",
+                Duration = "2hrs",
                 Id = "6400ca751f3418c68ad2c0er"
             };
 
@@ -79,7 +79,7 @@ namespace TestMovieBooking
                     rating = 3.0,
                     Censored = "htfr",
                     Genre="thriller",
-                    Durtion="3hrs",
+                    Duration="3hrs",
                     Id="6400ca751f3418c68ad2c04f"
                 },
                 new Movie()
@@ -89,16 +89,24 @@ namespace TestMovieBooking
                     rating = 9.0,
                     Censored = "A",
                     Genre="Drama",
-                    Durtion="2hrs",
+                    Duration="2hrs",
                     Id="6400ca751f3418c68ad2c0er"
                 }
             };
-            movieServices.Setup(m => m.getMovie("6400ca751f3418c68ad2c0er")).Returns(list.FirstOrDefault(m => m.Name == "weij"));
+            movieServices.Setup(m => m.containsMovie(data.Name)).Returns(true);
+            movieServices.Setup(m => m.getMovie("weij")).Returns(list.FirstOrDefault(m => m.Name == "weij"));
             MovieController mController = new MovieController(movieServices.Object);
-            var actual = mController.getMovie("");
+            var actual = mController.getMovie("weij");
             ActionResult<Movie> expected = (ActionResult<Movie>)data;
             //var check = (OkObjectResult)actual;
             Assert.That(actual.GetType(), Is.EqualTo(expected.GetType()));
+
+            //movieServices.Setup(m => m.getMovie("")).Returns(list.FirstOrDefault(m => m.Name == "weij"));
+            //MovieController mController = new MovieController(movieServices.Object);
+            //var actual = mController.getMovie("weij");
+            //var expected = (ActionResult<Movie>)data;
+            //var check = (OkObjectResult)actual.Result;
+            //Assert.That(check.Value, Is.EqualTo(expected.Result));
         }
         [Test]
         public void Test_AddMovie()
@@ -111,11 +119,11 @@ namespace TestMovieBooking
                 rating = 9.0,
                 Censored = "A",
                 Genre = "Drama",
-                Durtion = "2hrs",
+                Duration = "2hrs",
                 Id = "6400ca751f3418c68ad2c0er"
             };
+            movieServices.Setup(m => m.containsMovie(data.Name)).Returns(false);
             movieServices.Setup(m => m.addMovie(data));
-
             MovieController mController = new MovieController(movieServices.Object);
             var actual = mController.post(data);
             var check = (OkObjectResult)actual;
@@ -124,7 +132,22 @@ namespace TestMovieBooking
         [Test]
         public void Test_UpdateMovie()
         {
-            Assert.Pass();
+            Movie data = new Movie()
+            {
+                Name = "Vampire",
+                Description = "Diaries",
+                rating = 8.0,
+                Censored = "A",
+                Genre = "Drama",
+                Duration = "1hr",
+                Id = "6400ca751f3418c68ad2c0er"
+            };
+            movieServices.Setup(m => m.containsMovieById(data.Id)).Returns(true);
+            movieServices.Setup(m => m.updateMovie(data));
+            MovieController mController = new MovieController(movieServices.Object);
+            var actual = mController.put(data);
+            var check = (OkObjectResult)actual;
+            Assert.That(check.Value, Is.EqualTo("Updated Successfully"));
         }
         [Test]
         public void Test_DeleteMovie()
@@ -136,10 +159,10 @@ namespace TestMovieBooking
                 rating = 3.0,
                 Censored = "htfr",
                 Genre = "thriller",
-                Durtion = "3hrs",
+                Duration = "3hrs",
                 Id = "6400ca751f"
             };
-            movieServices.Setup(m => m.containsMovieById("6400ca751f")).Returns(true);
+            movieServices.Setup(m => m.containsMovieById(data.Id)).Returns(true);
             movieServices.Setup(m => m.deleteMovie("6400ca751f"));
             MovieController mController = new MovieController(movieServices.Object);
             var actual = mController.delete("6400ca751f");

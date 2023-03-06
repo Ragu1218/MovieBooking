@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Dispatch, useState } from 'react'
 import styled from 'styled-components'
 import { add } from '../../assets'
+// import AddModal from '../Movie/Modal/AddModal'
+import MovieModal from '../Movie/Modal/MovieModal'
 
+// interface BtmBarProp{
+//   setShowMovieModel:Dispatch<React.SetStateAction<boolean>>
+// }
 
 const BottomDiv=styled.div`
 display: flex;
@@ -21,17 +26,21 @@ const Add=styled.div<{img: string}>`
     margin-right: 1%;
     background-size: cover;
 `
+// {setShowMovieModel}:BtmBarProp
 const BottomBar = () => {
 
     const onAdd=()=>{
 
     }
+  const [showAddModal, setShowAddModal] = useState(false)
+
 
   return (
     <BottomDiv>
-        <Add img={add} onClick={onAdd}>
-            
+        <Add img={add} onClick={() => document.getElementById("trig-add-btn")?.click()}>
         </Add>
+        {/* {showAddModal && <MovieModal setShowMovieModal={setShowAddModal} />} */}
+        
     </BottomDiv>
   )
 }

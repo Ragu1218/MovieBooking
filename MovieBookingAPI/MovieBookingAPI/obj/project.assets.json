@@ -1946,26 +1946,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\19tue\\.nuget\\packages\\": {}
+    "/Users/ragu/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\MovieBookingAPI.csproj",
+      "projectUniqueName": "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/MovieBookingAPI.csproj",
       "projectName": "MovieBookingAPI",
-      "projectPath": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\MovieBookingAPI.csproj",
-      "packagesPath": "C:\\Users\\19tue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\obj\\",
+      "projectPath": "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/MovieBookingAPI.csproj",
+      "packagesPath": "/Users/ragu/.nuget/packages/",
+      "outputPath": "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\19tue\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/ragu/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2036,7 +2034,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }

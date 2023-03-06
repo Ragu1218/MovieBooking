@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\TestMovieBooking\\TestMovieBooking.csproj": {}
+    "/Users/ragu/MovieBooking/MovieBookingAPI/TestMovieBooking/TestMovieBooking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\MovieBookingAPI.csproj": {
+    "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/MovieBookingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\MovieBookingAPI.csproj",
+        "projectUniqueName": "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/MovieBookingAPI.csproj",
         "projectName": "MovieBookingAPI",
-        "projectPath": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\MovieBookingAPI.csproj",
-        "packagesPath": "C:\\Users\\19tue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\obj\\",
+        "projectPath": "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/MovieBookingAPI.csproj",
+        "packagesPath": "/Users/ragu/.nuget/packages/",
+        "outputPath": "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\19tue\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ragu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -92,36 +90,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\TestMovieBooking\\TestMovieBooking.csproj": {
+    "/Users/ragu/MovieBooking/MovieBookingAPI/TestMovieBooking/TestMovieBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\TestMovieBooking\\TestMovieBooking.csproj",
+        "projectUniqueName": "/Users/ragu/MovieBooking/MovieBookingAPI/TestMovieBooking/TestMovieBooking.csproj",
         "projectName": "TestMovieBooking",
-        "projectPath": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\TestMovieBooking\\TestMovieBooking.csproj",
-        "packagesPath": "C:\\Users\\19tue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\TestMovieBooking\\obj\\",
+        "projectPath": "/Users/ragu/MovieBooking/MovieBookingAPI/TestMovieBooking/TestMovieBooking.csproj",
+        "packagesPath": "/Users/ragu/.nuget/packages/",
+        "outputPath": "/Users/ragu/MovieBooking/MovieBookingAPI/TestMovieBooking/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\19tue\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ragu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\MovieBookingAPI.csproj": {
-                "projectPath": "C:\\Users\\19tue\\Desktop\\MovieBooking\\MovieBooking\\MovieBookingAPI\\MovieBookingAPI\\MovieBookingAPI.csproj"
+              "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/MovieBookingAPI.csproj": {
+                "projectPath": "/Users/ragu/MovieBooking/MovieBookingAPI/MovieBookingAPI/MovieBookingAPI.csproj"
               }
             }
           }
@@ -138,7 +134,7 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.3.2, )"
+              "version": "[17.5.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -149,16 +145,24 @@
               "version": "[3.13.3, )"
             },
             "NUnit.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.5.0, )"
+              "version": "[3.6.0, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.4.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.2.0, )"
             }
           },
           "imports": [
@@ -177,7 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }

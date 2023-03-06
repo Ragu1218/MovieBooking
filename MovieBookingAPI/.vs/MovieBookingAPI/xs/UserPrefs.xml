@@ -1,17 +1,16 @@
 ﻿<Properties StartupConfiguration="{177D470E-AF3E-45DA-8BF8-7E81B9220907}|https">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieBookingAPI/Modals/Movie.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestMovieBooking/MovieTests.cs">
     <Files>
-      <File FileName="MovieBookingAPI/Controllers/MovieController.cs" Line="14" Column="1" />
-      <File FileName="MovieBookingAPI/Modals/Movie.cs" Line="12" Column="40" />
-      <File FileName="MovieBookingAPI/Controllers/LoginController.cs" Line="22" Column="27" />
+      <File FileName="MovieBookingAPI/Controllers/MovieController.cs" Line="68" Column="1" />
+      <File FileName="MovieBookingAPI/Modals/Movie.cs" Line="12" Column="1" />
+      <File FileName="MovieBookingAPI/Controllers/LoginController.cs" Line="34" Column="27" />
       <File FileName="MovieBookingAPI/Controllers/UserController.cs" Line="12" Column="1" />
-      <File FileName="MovieBookingAPI/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="MovieBookingAPI/Properties/launchSettings.json" />
       <File FileName="MovieBookingAPI/appsettings.json" Line="16" Column="1" />
       <File FileName="MovieBookingAPI/Program.cs" Line="46" Column="24" />
-      <File FileName="MovieBookingAPI/Modals/UserLogin.cs" Line="1" Column="1" />
+      <File FileName="MovieBookingAPI/Modals/UserLogin.cs" />
+      <File FileName="MovieBookingAPI/Services/MovieServices.cs" Line="29" Column="9" />
+      <File FileName="TestMovieBooking/MovieTests.cs" Line="162" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,22 +18,28 @@
           <Node name="MovieBookingAPI" expanded="True">
             <Node name="MovieBookingAPI" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Modals" expanded="True">
-                <Node name="Movie.cs" selected="True" />
-              </Node>
+              <Node name="Modals" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="TestMovieBooking" expanded="True">
+              <Node name="MovieTests.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="MovieBookingAPI" expanded="True" />
+        </State>
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.MovieBookingAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ragu/Training/Training/MovieBooking/MovieBookingAPI/MovieBookingAPI/Controllers/MovieController.cs" relfile="MovieBookingAPI/Controllers/MovieController.cs" line="62" column="1" />
-      <Breakpoint file="/Users/ragu/Training/Training/MovieBooking/MovieBookingAPI/MovieBookingAPI/Controllers/MovieController.cs" relfile="MovieBookingAPI/Controllers/MovieController.cs" line="62" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MovieBookingAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

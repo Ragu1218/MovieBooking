@@ -55,10 +55,10 @@ namespace MovieBookingAPI.Controllers
 		}
 
 
-		//[Authorize]
+		[Authorize]
 		[HttpPost("AddNewMovie")]
-        //[Authorize(Roles = "Administrator")]
-        public IActionResult post([FromBody]Movie film)
+        [Authorize(Roles = "Administrator")]
+		public IActionResult post([FromBody]Movie film)
 		{
             if (movie.containsMovie(film.Name)) return BadRequest("Already existing movie");
             movie.addMovie(film);
