@@ -12,7 +12,9 @@ namespace MovieBookingAPI.Services
 		public void updateMovie(Movie movie);
 		public void deleteMovie(string movieName);
 		public bool containsMovie(string movie);
-	}
+		public bool containsMovieById(string id);
+
+    }
 
 }
 

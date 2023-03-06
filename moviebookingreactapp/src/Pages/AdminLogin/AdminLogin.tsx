@@ -4,6 +4,7 @@ import Input from './Input';
 import { useNavigate } from 'react-router-dom';
 import { url } from 'inspector';
 import axios from 'axios';
+import NavBar from '../../Components/NavBar/NavBar';
 
 export const Body=styled.div`
 background-image: url("https://preview.redd.it/4fxxbm4opjd31.jpg?auto=webp&s=f5b7d62076600a978d290a5e87f13140c47f5cd0");
@@ -63,7 +64,7 @@ useEffect(() => {
 
 const onLogin=()=>{
   axios.post("https://localhost:7069/Login",user)
-  .then(res=>console.log(res.data))
+  .then(res=>localStorage.setItem("token",res.data))
 }
   
   const [admin, setAdmin] = useState(false);

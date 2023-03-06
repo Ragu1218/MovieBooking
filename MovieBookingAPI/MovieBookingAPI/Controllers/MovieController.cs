@@ -23,21 +23,21 @@ namespace MovieBookingAPI.Controllers
 
 		[HttpGet("GetAllMovies")]
         //[Authorize(Roles = "Administrator")]
-		public ActionResult getAllMovies()
+		public ActionResult<List<Movie>> getAllMovies()
 		{
-			var curr = GetCurrentUser();
 			try
 			{
                 if (movie.getMovies().Capacity==0) return NotFound("Movies Currently Unavailable");
                 return Ok(movie.getMovies());
             }
-			catch
+			catch(Exception ex) 
 			{
+				Console.WriteLine(ex.Message);
 				return StatusCode(500);
 			}
 		}
-		[HttpGet("GetMovieByName{movieName}")]
-		public IActionResult getMovie(string movieName)
+		[HttpGet("GetMovieByName/{movieName}")]
+		public ActionResult<Movie> getMovie(string movieName)
 		{
 			try
 			{
@@ -57,7 +57,7 @@ namespace MovieBookingAPI.Controllers
 
 		//[Authorize]
 		[HttpPost("AddNewMovie")]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public IActionResult post([FromBody]Movie film)
 		{
             if (movie.containsMovie(film.Name)) return BadRequest("Already existing movie");
@@ -72,7 +72,7 @@ namespace MovieBookingAPI.Controllers
 		{
 			try
 			{
-                if (!movie.containsMovie(film.Name)) return NotFound("Enter a existing movie");
+                if (!movie.containsMovieById(film.Id)) return NotFound("Enter a existing movie");
                 movie.updateMovie(film);
                 return Ok("Updated Successfully");
             }
@@ -83,14 +83,14 @@ namespace MovieBookingAPI.Controllers
             
 		}
 
-		[HttpDelete("DeleteMovie")]
+		[HttpDelete("DeleteMovie/{id}")]
         [Authorize(Roles = "Administrator")]
-		public IActionResult delete(string movieName)
+		public IActionResult delete(string id)
 		{
 			try
 			{
-				if (!movie.containsMovie(movieName)) return NotFound("Enter a correct existing name"); 
-					movie.deleteMovie(movieName);
+				if (!movie.containsMovieById(id)) return NotFound("Enter a correct existing name"); 
+					movie.deleteMovie(id);
                 return Ok("Movie deleted successfully");
             }
 			catch

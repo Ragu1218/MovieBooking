@@ -21,9 +21,9 @@ namespace MovieBookingAPI.Services
             MoviesDB().InsertOne(movie);
         }
 
-        public void deleteMovie(string movieName)
+        public void deleteMovie(string id)
         {
-            MoviesDB().DeleteOne(m => m.Name == movieName);
+            MoviesDB().DeleteOne(m => m.Id == id);
         }
 
         public Movie getMovie(string movieName)
@@ -44,6 +44,12 @@ namespace MovieBookingAPI.Services
         public bool containsMovie(string movie)
         {
             if (MoviesDB().Find(m => m.Name == movie).ToList().Capacity > 0) return true;
+            return false;
+        }
+
+        public bool containsMovieById(string id)
+        {
+            if (MoviesDB().Find(m => m.Id == id).ToList().Capacity > 0) return true;
             return false;
         }
     }

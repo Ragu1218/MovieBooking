@@ -1,48 +1,32 @@
 import { BrowserRouter as Router,Link, NavLink } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import NavBar from '../../Components/NavBar/NavBar';
+import Tile from '../../Components/Movie/Tile';
+import BottomBar from '../../Components/NavBar/BottomBar';
 
 const getAll=()=>{
-  axios.get("https://localhost:7069/Movie/GetAllMovies")
-  .then(res=>console.log(res.data))
+  return axios.get("https://localhost:7069/Movie/GetAllMovies")
+  .then(res=>res.data)
 }
 
 
 const LandingPage = () => {
+
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+      getAll()
+      .then((data)=>setMovies(data));
+  }, [])
+  console.log(movies);
+  
   return (
     <div>
-      <div>
-        <NavLink to={"/Login"}>
-            Movie Booking
-          <button>
-           Admin
-          </button>
-        </NavLink>
-      </div>
-      <div>
-      <button>
-          Get
-        </button>
-        <button onClick={getAll}>
-          getall
-        </button>
-        <button>
-          Add
-        </button>
-        <button>
-          Update
-        </button>
-        <button>
-          delete
-        </button><br/>
-        <form>
-          
-        </form>
-      </div>
-      <div>
-
-      </div>
-      
+      <NavBar/>
+      {
+        movies.map(movie=><Tile movie={movie}/>)
+      }
+      <BottomBar/>
     </div>
   )
 }
